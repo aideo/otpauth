@@ -1,4 +1,6 @@
 # ideo/otpauth
+[![Build Status](https://travis-ci.org/aideo/otpauth.svg?branch=master)](https://travis-ci.org/aideo/otpauth)
+
 Provides necessary processing for TOTP.
 
 For pin generation and authentication, it is based on the implementation of google-authenticator.
