@@ -2,11 +2,11 @@
   "name": "ideo/otpauth",
   "description": "Provides necessary processing for TOTP.",
   "type": "library",
-  "license": "Apache 2",
+  "license": "Apache-2.0",
   "authors": [
     {
       "name": "Kouichi Machida",
-      "email": "k01@white-wing.jp"
+      "email": "k-machida@aideo.co.jp"
     }
   ],
   "minimum-stability": "dev",
