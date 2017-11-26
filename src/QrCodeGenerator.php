@@ -14,27 +14,6 @@ class QrCodeGenerator
 {
 
     /**
-     * QrCodeGenerator オブジェクトを保持します。
-     *
-     * @var QrCodeGenerator|null
-     */
-    private static $instance = null;
-
-    /**
-     * QrCodeGenerator オブジェクトを取得します。
-     *
-     * @return QrCodeGenerator 初期化された QrCodeGenerator オブジェクト。
-     */
-    public static function getInstance()
-    {
-        if (self::$instance === null) {
-            self::$instance = new QrCodeGenerator();
-        }
-
-        return self::$instance;
-    }
-
-    /**
      * QR コードを生成します。
      *
      * @param string $secret シークレット。

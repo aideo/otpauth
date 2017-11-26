@@ -8,16 +8,19 @@ For pin generation and authentication, it is based on the implementation of goog
 ## Usage
 Generation of QR code for TOTP compatible applications.
 
+    $keyGenerator = new KeyGenerator();
+    $qrCodeGenerator = new QrCodeGenerator();
+
     // Generate keys randomly, save this key in association with the target account.
-    $keyBytes = KeyGenerator::getInstance()->generateRandom(10);
+    $keyBytes = $keyGenerator->generateRandom(10);
     
-    $qrDataUri = QrCodeGenerator::getInstance()->getQrCodeDataUri($keyBytes, 'sample@foo.bar', 'Sample');
+    $qrDataUri = $qrCodeGenerator->getQrCodeDataUri($keyBytes, 'sample@foo.bar', 'Sample');
 
 Authentication using pin.
 
     // It reads the key of the target account and compares it with the input pin.
-    $generator = new PasscodeGenerator(new HMacSigner($keyBytes));
+    $passcodeGenerator = new PasscodeGenerator(new HMacSigner($keyBytes));
     $counter = new TotpCounter();
     $time = time();
     
-    $valid = $generator->verifyTimeoutCode($pin, $counter->getValueAtTime($time));
+    $valid = $passcodeGenerator->verifyTimeoutCode($pin, $counter->getValueAtTime($time));
